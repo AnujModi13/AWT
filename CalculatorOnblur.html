@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Calculator</title>
+<link rel="stylesheet" href="Calculator.css">
+</head>
+<body>
+<div class="container">
+  <h1>Calculator</h1>
+  <input type="text" class="input" placeholder="Enter the first number" required  id="input1">
+<span id="e1"></span>
+  <input type="text" class="input" placeholder="Enter the second number" required id="input2">
+  <span id="e2"></span>
+  <span id="e3">Select the function you want to perform and then click Anywhere</span>
+  <button class="button" id="add" onblur="sum();">Add</button>
+  <button class="button" id="sub" onblur="sub();">Sub</button>
+  <button class="button" id="div" onblur="div();">Div</button>
+  <button class="button" id="mul" onblur="mul();">Mul</button>
+  <div> <label id="label"> </label></div>
+ 
+</div>
+
+
+<script>
+    function validateNumber(number) {
+        return !isNaN(number);
+      }
+      document.getElementsByTagName("span").innerHTML = "";
+    function sum(){
+        var no1 = parseInt(document.getElementById('input1').value);
+        var no2 = parseInt(document.getElementById('input2').value);
+        if (!validateNumber(no1) || !validateNumber(no2)) {
+            alert("Please enter valid numbers");
+            if(!validateNumber(no1))
+            document.getElementById('e1').innerHTML = "*Enter the Vaild Input";
+            else if(!validateNumber(no2))
+            document.getElementById('e2').innerHTML = "*Enter the Vaild Input";
+            return;
+          }
+        res = no1 + no2;
+        document.getElementById('label').innerHTML = "Sum of "+no1+" and "+no2+" = "+ res;
+        //alert('Testing...' + res);
+    }
+    function sub(){
+        var no1 = parseInt(document.getElementById('input1').value);
+        var no2 = parseInt(document.getElementById('input2').value);
+        if (!validateNumber(no1) || !validateNumber(no2)) {
+            alert("Please enter valid numbers");
+            if(!validateNumber(no1))
+            document.getElementById('e1').innerHTML = "*Enter the Vaild Input";
+            else if(!validateNumber(no2))
+            document.getElementById('e2').innerHTML = "*Enter the Vaild Input";
+            return;
+          }
+        res = no1 - no2;
+        document.getElementById('label').innerHTML =  "Diff of "+no1+" and "+no2+" = "+ res;;
+        //alert('Testing...' + res);
+    }
+    function div(){
+        var no1 = parseInt(document.getElementById('input1').value);
+        var no2 = parseInt(document.getElementById('input2').value);
+        if (!validateNumber(no1) || !validateNumber(no2)) {
+            alert("Please enter valid numbers");
+            if(!validateNumber(no1))
+            document.getElementById('e1').innerHTML = "*Enter the Vaild Input";
+            else if(!validateNumber(no2))
+            document.getElementById('e2').innerHTML = "*Enter the Vaild Input";
+            return;
+          }
+        res = no1 / no2;
+        document.getElementById('label').innerHTML =  "Division of "+no1+" and "+no2+" = "+ res;;
+        //alert('Testing...' + res);
+    }
+    function mul(){
+        var no1 = parseInt(document.getElementById('input1').value);
+        var no2 = parseInt(document.getElementById('input2').value);
+        if (!validateNumber(no1) || !validateNumber(no2)) {
+            alert("Please enter valid numbers");
+            if(!validateNumber(no1))
+            document.getElementById('e1').innerHTML = "*Enter the Vaild Input";
+            else if(!validateNumber(no2))
+            document.getElementById('e2').innerHTML = "*Enter the Vaild Input";
+            return;
+          }
+        res = no1 * no2;
+        document.getElementById('label').innerHTML =  "Multiplication of "+no1+" and "+no2+" = "+ res;;
+        //alert('Testing...' + res);
+    }
+</script>
+</body>
+</html>
