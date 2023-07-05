@@ -1,0 +1,21 @@
+.error {
+  color: red;
+}
+.container{
+  justify-content: center;
+  display: flex;
+}
+#signupForm{
+  background-color: whitesmoke;
+  width:60%;
+  align-content: center;
+  border-radius: 1rem;
+  margin:2rem;
+  padding:2rem;
+}
+h2{
+  text-align: center;
+}
+div{
+  margin:1rem;
+}
