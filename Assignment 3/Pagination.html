@@ -1,0 +1,123 @@
+<html>
+  <head>
+    <title>Pagination</title>
+    <style type="text/css">
+      body {
+        font-family: Arial;
+        font-size: 10pt;
+      }
+      table {
+        border: 1px solid #ccc;
+        border-collapse: collapse;
+      }
+      table th {
+        background-color: #f7f7f7;
+        color: #333;
+        font-weight: bold;
+      }
+      table th,
+      table td {
+        padding: 5px;
+        border-color: #ccc;
+      }
+    </style>
+  </head>
+  <body onload="load()" id="body">
+    <table id="TableID" cellpadding="0" cellspacing="0" border="1">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>City</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </body>
+  <script type="text/javascript" >
+    let PageNo = 0;
+var data = new Array();
+data.push(["Anuj", "21ce072@charusatedu.in", "Bharuch"]);
+data.push(["Anish", "21ce071@charusatedu.in", "Morbi"]);
+data.push(["OM", "21ce073@charusatedu.in", "Bharuch"]);
+data.push(["Faizan", "21ce074@charusatedu.in", "Ahmedabad"]);
+data.push(["Nevil", "21ce075@charusatedu.in", "Rajkot"]);
+data.push(["Kush", "21ce076@charusatedu.in", "Navsari"]);
+data.push(["Jiya", "21ce077@charusatedu.in", "Navsari"]);
+data.push(["Dhruv", "21ce079@charusatedu.in", "Surat"]);
+data.push(["OM", "21ce081@charusatedu.in", "Bhavnagar"]);
+
+
+window.onload = function () {
+    console.log("loaded");
+    createTable(data);
+    createButtons();
+}
+
+
+
+function createTable(arr, index = 0) {
+    var table = document.getElementById("TableID").getElementsByTagName("tbody")[0];
+    table.innerHTML = "";
+    var end = Math.min(index + 4, arr.length);
+    for (var i = index; i < end; i++) {
+        var row = table.insertRow(-1);
+        for (const data of arr[i]) {
+            var cell = row.insertCell(-1);
+            cell.innerHTML = data;
+        }
+    }
+    var spacing = document.createElement("br");
+    body.appendChild(spacing);
+}
+
+function createButtons() {
+    var body = document.getElementById("body");
+    var div = document.createElement("div");
+
+    // prev
+    var Prev = document.createElement("button");
+    Prev.onclick = function () {
+        if (PageNo > 0) {
+            PageNo--;
+            var index = PageNo * 4;
+            createTable(data, index);
+        }
+    };
+    Prev.innerHTML = "Prev";
+    div.appendChild(Prev);
+
+    // numbers
+    var btns = Math.ceil(data.length / 5);
+    for (var i = 0; i < btns; i++) {
+        var btn = document.createElement("button");
+        btn.innerHTML = i + 1;
+        btn.value = i;
+        btn.onclick = function () {
+            NumberPages(this.value);
+        };
+        div.appendChild(btn);
+    }
+
+    // next
+    var Next = document.createElement("button");
+    Next.onclick = function () {
+        var index = (PageNo + 1) * 4;
+        if (index < data.length) {
+            PageNo++;
+            createTable(data, index);
+        }
+    };
+    Next.innerHTML = "Next";
+    div.appendChild(Next);
+
+    // all buttons to div
+    body.appendChild(div);
+}
+
+function NumberPages(Pages) {
+    PageNo = parseInt(Pages);
+    createTable(data, PageNo * 4);
+}
+  </script>
+</html>

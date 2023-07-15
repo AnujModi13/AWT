@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="Generate Table" onclick="GenerateTable()">
+    <hr/>
+    <div id="dvTable"></div>
+    
+    
+    <script type="text/javascript">
+        function GenerateTable()
+        {
+            var customers=new Array();
+
+            customers.push(["Customer Id","Name","Country"]);
+            customers.push(["1","Anuj","India"]);
+            customers.push(["2","Kalp","Pakistan"]);
+            customers.push(["3","Vismit","Dubai"]);
+            customers.push(["4","Arya","Japan"]);
+
+            console.log(customers);
+
+            let table=document.createElement("TABLE");
+            table.border="1";
+
+            let columnCount =customers[0].length;
+            var rowCount=customers.length; 
+
+            let row =table.insertRow(-1);
+            for(var i=0;i<columnCount;i++)
+            {
+                var headerCell=document.createElement("th");
+                headerCell.innerHTML =customers[0][i];
+                row.appendChild(headerCell);
+            }
+
+            for(var i=1;i<rowCount;i++)
+            {
+                row=table.insertRow();
+                for(var j=0;j<columnCount;j++)
+                {
+                    var cell =row.insertCell();
+                    cell.innerHTML=customers[i][j];
+                }
+            }
+
+            var dvTable=document.getElementById("dvTable");
+            dvTable.appendChild(table);
+
+        }
+
+    </script>
+</body>
+</html>
