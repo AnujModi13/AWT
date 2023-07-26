@@ -15,3 +15,11 @@ Assignment 3
 
 1. DOM_Table.htm
 2. Pagination.html
+
+
+PracticalList
+
+1. Practical 1.js
+2. Practical 2.js
+3. Practical 3.js
+4. Practical 4.js
