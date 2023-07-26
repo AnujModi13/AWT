@@ -10,3 +10,8 @@ Assignment 2
 1. LoginForm.html
 2. Login Form.css
 3. index.js
+
+Assignment 3
+
+1. DOM_Table.htm
+2. Pagination.html

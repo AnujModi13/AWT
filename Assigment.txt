@@ -1,3 +1,0 @@
-Use strict 
-var let 
-OnClick button 
