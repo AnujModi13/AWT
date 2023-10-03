@@ -8,12 +8,12 @@ function loginUser(email,password,callback){
     },5000);
 }
 
-const user1 =loginUser("test@example.com",123456,user1=>{
-    console.log(user1);
-})
+// const user1 =loginUser("test@example.com",123456,user1=>{
+//     console.log(user1);
+// })
 
-// const user1=loginUser("test@example.com",123456)
-// console.log(user1);
+const user1=loginUser("test@example.com",123456)
+console.log(user1);
 
 
 // CallBack hell

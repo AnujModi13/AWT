@@ -2,7 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser")
 
 
-const hostname = '127.0.0.33';
+const hostname = '127.0.0.1';
 const port = 5501;
 // New app using express module
 const app = express();
@@ -11,7 +11,8 @@ app.use(bodyParser.urlencoded({
 }));
   
 app.get("/", function(req, res) {
-  res.sendFile(__dirname + "/form.html");
+  res.sendFile(__dirname +"/form.html");
+ 
 });
   
 app.post("/display", function(req, res) {
@@ -24,6 +25,6 @@ app.post("/display", function(req, res) {
 });
   
 
-app.listen(5501, function(){
+app.listen(port,hostname, function(){
   console.log(`server is running on http://${hostname}:${port}/`);
 })

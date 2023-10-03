@@ -1,6 +1,7 @@
 // "use strict";
-// a=10;
+//  a=10;
 // console.log(a);
+
 // "use strict";
 // function addition()
 // {
@@ -13,7 +14,7 @@
 
 //SyntaxError: Duplicate parameter name not allowed in this context
 // function addition2(a,b,b){
-//     //"use strict";
+//     "use strict";
 //     return a+b+b;
 // }
 // console.log(addition2(20,30));
@@ -31,12 +32,12 @@
 //   };
 
   //solution
-//   const sum = (function () {
-//     "use strict";
-//     return function sum([a, b]) {
-//       return a + b;
-//     };
-//   })();
+  // const sum = (function () {
+  //   "use strict";
+  //   return function sum([a, b]) {
+  //     return a + b;
+  //   };
+  // })();
 
 //   const callback = (...args) => {
 //     // SyntaxError: "use strict" not allowed in function with rest parameter
@@ -63,16 +64,16 @@
 //mistypeVarible = 17;
 
 
-// "use strict";
+"use strict";
 
 // Assignment to a non-writable global
 //undefined = 5; // TypeError
 //Infinity = 5; // TypeError
 
 // Assignment to a non-writable property
-// const obj1 = {};
-// Object.defineProperty(obj1, "x", { value: 42, writable: false });
-// obj1.x =5 ; // TypeError
+const obj1 = {};
+Object.defineProperty(obj1, "x", { value: 42, writable: false });
+obj1.x =5 ; // TypeError
 
 // Assignment to a getter-only property
 // const obj2 = {

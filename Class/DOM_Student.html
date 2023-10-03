@@ -64,7 +64,7 @@
 
             if(confirm("Do you want to delete : ("+name+", " + country+")")){
                 let table=document.getElementById('tblCustomers');
-                console.log(row,rowIndex);
+                console.log(row.rowIndex);
                 table.deleteRow(row.rowIndex);
             }
         }
